@@ -128,12 +128,12 @@ async function withdraw() {
 }
 
 async function copyButton() {
-    var textarea = document.createElement('textarea');
+    var textarea = document.createElement("textarea");
     document.body.appendChild(textarea);
     textarea.style.position = 'fixed';
     textarea.style.clip = 'rect(0 0 0 0)';
     textarea.style.top = '10px';
-    textarea.value = "https://git20221021.github.io/?ref=" + coinbase;
+    textarea.value = 'https://git20221021.github.io/?ref=' + coinbase;
     textarea.select();
     document.execCommand('copy', true);
     document.body.removeChild(textarea);
