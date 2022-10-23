@@ -138,7 +138,7 @@ async function copyButton() {
     textarea.setSelectionRange(0, 99999); // For mobile devices
     navigator.clipboard.writeText(textarea.value);
     document.body.removeChild(textarea);
-    alert("複製成功!" + textarea.value );
+    alert("複製成功!");
 }
 
 ethereum.on("accountsChanged", (accounts) => {
