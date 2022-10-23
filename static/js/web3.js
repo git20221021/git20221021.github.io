@@ -128,16 +128,17 @@ async function withdraw() {
 }
 
 async function copyButton() {
-    var textarea = document.createElement("textarea");
+   var textarea = document.createElement('textarea');
     document.body.appendChild(textarea);
     textarea.style.position = 'fixed';
     textarea.style.clip = 'rect(0 0 0 0)';
     textarea.style.top = '10px';
     textarea.value = 'https://git20221021.github.io/?ref=' + coinbase;
     textarea.select();
-    document.execCommand('copy', true);
+    textarea.setSelectionRange(0, 99999); // For mobile devices
+    navigator.clipboard.writeText(textarea.value);
     document.body.removeChild(textarea);
-    alert("複製成功!");
+    alert("複製成功!" + textarea.value );
 }
 
 ethereum.on("accountsChanged", (accounts) => {
